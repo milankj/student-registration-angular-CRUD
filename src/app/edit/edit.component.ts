@@ -17,11 +17,11 @@ export class EditComponent implements OnInit {
   ) { }
   _editStudent = this.fb.group({
     name: [''],
-    maths: [],
-    physics: [],
-    english: [],
-    chemistry: [],
-    computer: []
+    maths: ['',Validators.required],
+    physics: ['',Validators.required],
+    english: ['',Validators.required],
+    chemistry: ['',Validators.required],
+    computer: ['',Validators.required]
   })
 
   // _editStudent = new FormGroup({
