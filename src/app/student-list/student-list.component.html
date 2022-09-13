@@ -13,7 +13,6 @@
     <table class="table mt-5">
         <thead class='thead-dark'>
             <tr>
-                <th scope="col">Id</th>
                 <th scope="col">Name</th>
                 <th scope="col">Maths</th>
                 <th scope="col">Physics</th>
@@ -24,7 +23,6 @@
         </thead>
         <tbody>
             <tr *ngFor="let student of students">
-                <th scope="row">{{student.studentId}}</th>
                 <td>{{student.name}}</td>
                 <td>{{student.maths}}</td>
                 <td>{{student.physics}}</td>

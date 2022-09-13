@@ -1,11 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import axios from 'axios';
+import { Observable, Subject } from 'rxjs';
+import { IStudent } from '../home/student';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StudentService {
+
+  public subject = new Subject()
 
   constructor(private http : HttpClient) { }
 
@@ -24,6 +28,7 @@ export class StudentService {
   deleteOneStudent(id : number){
     return axios.delete(`http://localhost:3000/api/v1/student/delete/${id}`)
   }
+
   editOneStudent(data,id:number){
     console.log('update id: ',id)
     return axios.post(`http://localhost:3000/api/v1/student/update/${id}`,{...data})

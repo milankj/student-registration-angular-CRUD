@@ -28,7 +28,7 @@ import { EditComponent } from './edit/edit.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [StudentService],
   bootstrap: [AppComponent]

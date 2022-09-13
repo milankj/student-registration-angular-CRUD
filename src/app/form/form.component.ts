@@ -23,7 +23,20 @@ export class FormComponent implements OnInit {
     console.log('Form values',this.formValues)
     
   }
+
+  isEmpty(obj): boolean{
+    for(const val in obj ){
+      if(obj[val] === ''){
+        return true
+      }
+    }
+    return false
+  }
   handleSubmit(){
+    if(this.isEmpty(this.formValues.value)){
+      alert('Empty Field(s)')
+      return 
+    }
     if(this.isEdit){
       console.log('Edit')
       let id = parseInt(this._route.snapshot.params['studentId'])

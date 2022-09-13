@@ -4,39 +4,65 @@
             <label htmlFor='name' class=' mb-3'>
                 Enter Name
             </label>
-            <input class='form-control p-2' type='text' placeholder='Enter Full Name' id='name' formControlName='name'
-             />
+            <input [class.is-invalid]="formValues.get('name').invalid && formValues.get('name').touched"
+                class='form-control p-2' type='text' placeholder='Enter Full Name' id='name' formControlName='name' />
+            <small [class.d-none]="formValues.get('name').valid || formValues.get('name').untouched"
+                class="text-danger">Field Empty</small>
         </div>
         <div class='form-group mb-3'>
             <label htmlFor='maths' class=' mb-3'>
                 Enter Maths mark
             </label>
-            <input class='form-control p-2' type='number' placeholder='Enter Maths Mark' id='maths' formControlName='maths'
-             />
+            <input [class.is-invalid]="formValues.get('maths').invalid && formValues.get('maths').touched"
+                class='form-control p-2' type='number' placeholder='Enter Maths Mark' id='maths'
+                formControlName='maths' />
+            <small [class.d-none]="formValues.get('maths').valid || formValues.get('maths').untouched"
+                class="text-danger">Field
+                Empty</small>
         </div>
         <div class='form-group mb-3'>
             <label htmlFor='physics' class=' mb-3'>
                 Enter Physics Mark
             </label>
-            <input class='form-control p-2' type='number' placeholder='Enter Physics Mark' id='physics' formControlName='physics' />
+            <input [class.is-invalid]="formValues.get('physics').invalid && formValues.get('physics').touched"
+                class='form-control p-2' type='number' placeholder='Enter Physics Mark' id='physics'
+                formControlName='physics' />
+            <small [class.d-none]="formValues.get('physics').valid || formValues.get('physics').untouched"
+                class="text-danger">Field
+                Empty</small>
         </div>
         <div class='form-group mb-3'>
             <label htmlFor='chemistry' class=' mb-3'>
                 Enter Chemistry Mark
             </label>
-            <input class='form-control p-2' type='number' placeholder='Enter Chemistry Name' id='chemistry' formControlName='chemistry' />
+            <input [class.is-invalid]="formValues.get('chemistry').invalid && formValues.get('chemistry').touched"
+                class='form-control p-2' type='number' placeholder='Enter Chemistry Name' id='chemistry'
+                formControlName='chemistry' />
+            <small [class.d-none]="formValues.get('chemistry').valid || formValues.get('chemistry').untouched"
+                class="text-danger">Field
+                Empty</small>
         </div>
         <div class='form-group mb-3'>
             <label htmlFor='english' class=' mb-3'>
                 Enter English Mark
             </label>
-            <input class='form-control p-2' type='number' placeholder='Enter English Name' id='english' formControlName='english' />
+            <input [class.is-invalid]="formValues.get('english').invalid && formValues.get('english').touched"
+                class='form-control p-2' type='number' placeholder='Enter English Name' id='english'
+                formControlName='english' />
+            <small [class.d-none]="formValues.get('english').valid || formValues.get('english').untouched"
+                class="text-danger">Field
+                Empty</small>
         </div>
         <div class='form-group mb-3'>
             <label htmlFor='computer' class=' mb-3'>
                 Enter Computer Mark
             </label>
-            <input class='form-control p-2' type='number' placeholder='Enter Computer Name' id='computer' formControlName='computer' />
+            <input [class.is-invalid]="formValues.get('computer').invalid && formValues.get('computer').touched"
+                class='form-control p-2' type='number' placeholder='Enter Computer Name' id='computer'
+                formControlName='computer' />
+            <small [class.d-none]="formValues.get('computer').valid || formValues.get('computer').untouched"
+                class="text-danger">Field
+                Empty</small>
         </div>
         <button class='btn btn-info'>Submit</button>
     </form>

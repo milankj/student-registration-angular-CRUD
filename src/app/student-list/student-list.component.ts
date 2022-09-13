@@ -11,10 +11,19 @@ import {Observable} from 'rxjs'
 })
 export class StudentListComponent implements OnInit {
 
-  constructor(private _studentService : StudentService,private router : Router,private _route : ActivatedRoute) { }
+  constructor(
+      private _studentService : StudentService,
+      private router : Router,
+      private _route : ActivatedRoute,
+      ) { }
   public students: IStudent[] = []
 
   ngOnInit(): void {  
+
+    this._studentService.subject.subscribe(val=>{
+      this.students = val as IStudent[]
+    })
+
      this._studentService.getStudents().then(res=>{
       this.students = res.data.student
      })
@@ -25,7 +34,7 @@ export class StudentListComponent implements OnInit {
     console.log(this._route.snapshot.params['studentId'])
   }
   handleDelete(studentId : number){
-    console.log('delete: ',studentId)
+    this._studentService.subject.next(this.students.filter(student=>student.studentId != studentId))
     this._studentService.deleteOneStudent(studentId).then(res=>{
       console.log(res)
     })
