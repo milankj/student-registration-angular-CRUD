@@ -1,0 +1,50 @@
+    <h1 class='text-center'>Student List</h1>
+    <div class='
+                    mt-5
+                    d-flex
+                    justify-content-center
+                    align-items-center'>
+        <button class='btn btn-primary'
+         [routerLink]="['create']"  
+        >
+            Create
+        </button>
+    </div>
+    <table class="table mt-5">
+        <thead class='thead-dark'>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Maths</th>
+                <th scope="col">Physics</th>
+                <th scope='col'>Chemistry</th>
+                <th scope='col'>English</th>
+                <th scope='col'>Computer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of students">
+                <th scope="row">{{student.studentId}}</th>
+                <td>{{student.name}}</td>
+                <td>{{student.maths}}</td>
+                <td>{{student.physics}}</td>
+                <td>{{student.chemistry}}</td>
+                <td>{{student.english}}</td>
+                <td>{{student.computer}}</td>
+                <span 
+                    role='button' 
+                    class='btn btn-outline-success ms-5' 
+                    (click)="handleEdit(student.studentId)"
+                    >
+                    Edit
+                </span>
+                <span 
+                    role='button' 
+                    class='btn btn-outline-danger ms-5' 
+                    (click)="handleDelete(student.studentId)"
+                    >
+                    Delete
+                </span>
+            </tr>
+        </tbody>
+    </table>
